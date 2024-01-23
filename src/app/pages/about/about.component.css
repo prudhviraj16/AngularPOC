@@ -1,0 +1,8 @@
+/* about component css */
+.jumbotron {
+    background-color : #fff;
+    width: 100%;
+    height : 90vh;
+    padding : 20px;
+    border-top: 10px solid white;
+}

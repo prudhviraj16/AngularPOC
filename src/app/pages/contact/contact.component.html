@@ -1,0 +1,37 @@
+<!-- contact form  -->
+<br>
+<div class="card" *ngIf="!value">
+    <div class="card-body">
+        <img class="img-fluid" src="https://www.blogtyrant.com/wp-content/uploads/2019/12/best-contact-us-pages-2.png"
+            alt="">
+        <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="form-group col-md-12">
+                    <label for="inputname">Name</label>
+                    <input type="text" class="form-control" id="inputname" placeholder="Enter name"
+                        formControlName="name" minlength="2" maxlength="100" appInputRestriction="letters">
+                </div>
+
+                <div class="form-group col-md-12">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Enter email"
+                        formControlName="email" minlength="2" maxlength="100" appInputRestriction="EmailRegex">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="inputEmail">Phone Number</label>
+                    <input type="number" class="form-control" id="inputEmail" placeholder="Enter number"
+                        appInputRestriction='integer' formControlName="number" minlength="10" maxlength="10">
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="textarea">Description</label>
+                    <textarea class="form-control" id="textarea" rows="3" placeholder="Enter description..."
+                        formControlName="description" minlength="2" maxlength="150"
+                        appInputRestriction="letters"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 20%; position: relative; left: 75%;">Submit</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<app-success *ngIf="value" [name]="contactForm.get('name')?.value??''" (close)="afterSubmit($event)"></app-success>

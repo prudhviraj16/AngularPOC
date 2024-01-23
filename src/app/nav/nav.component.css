@@ -1,0 +1,45 @@
+/* Navbar styling */
+.toolbar-color {
+  background: #e9ecef;
+}
+
+.example-container {
+  background: #e9ecef;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+a {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .nav-buttons {
+    display: none;
+  }
+}
+
+/* sidebar styling */
+.example-sidenav-container {
+  flex: 1;
+  background-color: #e9ecef;
+}
+
+.example-sidenav {
+  background-color: #e9ecef;
+}
+
+/* Setting active links background */
+
+.active-link {
+  background: DodgerBlue;
+  color: white !important;
+}
+
+@media (max-width: 600px) {
+  /* .toolbar-color{
+        display: none;
+    } */
+}

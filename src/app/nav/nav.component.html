@@ -1,0 +1,39 @@
+<!-- Navbar -->
+<div class="example-container">
+  <mat-toolbar class="toolbar-color">
+    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <span>Shop Cart</span>
+    <span class="example-spacer"></span>
+    <div>
+      <ng-container *ngFor="let navigationItem of topNavigationItems()">
+        <a mat-button
+          [routerLink]="[navigationItem.path]"
+          routerLinkActive='active-link' [routerLinkActiveOptions]="{ exact: true }">
+          <span >{{ navigationItem?.data?.['title']}}</span>
+        </a>
+      </ng-container>
+    </div>
+  </mat-toolbar>
+
+<!-- Sidebar -->
+
+  <mat-sidenav-container class="example-sidenav-container">
+    <!-- if the screen size is less than or equal to 768px the the sidebar is over or else sidebar is side  -->
+    <mat-sidenav class="example-sidenav" #snav [mode]="isHandSet.matches ? 'over' : 'side'" [style.width.px]="150" opened disableClose>
+      <mat-nav-list>
+        <ng-container *ngFor="let navigationItem of sideNavigationItems()">
+          <a mat-list-item
+          [routerLinkActiveOptions]="{ exact: true }"
+            [routerLink]="[navigationItem.path]"
+            routerLinkActive='active-link'>
+            <span >{{ navigationItem?.data?.['title']}}</span>
+          </a>
+        </ng-container>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

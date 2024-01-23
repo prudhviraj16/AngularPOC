@@ -1,0 +1,37 @@
+<!-- Register form HTML -->
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>Register</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <form class="example-form" [formGroup]="registerForm" (ngSubmit)="registerWithCredentials()">
+      <table class="example-full-width" cellspacing="0">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Username" formControlName="username" 
+                appInputRestriction="letters">
+            </mat-form-field>
+          </td>
+        </tr>
+        <tr>
+          <td><mat-form-field class="example-full-width">
+              <input matInput placeholder="Password" formControlName="password" type="password" name="password">
+            </mat-form-field></td>
+        </tr>
+        <tr>
+          <td><mat-form-field class="example-full-width">
+              <input matInput placeholder="Phone number" formControlName="number" type="number" 
+                appInputRestriction="integer">
+            </mat-form-field></td>
+        </tr>
+      </table>
+      <button mat-raised-button type="submit" style="margin-left: 25%; background-color: DodgerBlue;">Register</button>
+      <span style="display: block;margin-top: 10px;margin-left:10%">Already have an account? <a type="button"
+          style="color:blue; position:relative;right : -45%;text-decoration: underline" routerLink="/login">Login
+          here</a></span>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+  </mat-card-actions>
+</mat-card>

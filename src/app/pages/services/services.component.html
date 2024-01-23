@@ -1,0 +1,24 @@
+<!-- Products display -->
+<div class="container-products" *ngIf="products.length>0">
+    <div class="container" *ngIf="!loader">
+        <div class="row">
+            <div class="card col-md-3 col-sm-2" *ngFor="let item of products">
+                <img src="{{item.image}}" alt="">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
+                    {{item.title}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
+                    {{item.description}}</p>
+                <p><strong>Price:</strong> ${{item.price}}</p>
+                <button class="btn btn-primary">Add to cart</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Spinner -->
+
+<div class="spinner" *ngIf="products.length===0">
+    <div class="container-spinner" *ngIf="loader">
+        <mat-spinner class="custom-spinner">></mat-spinner>
+    </div>
+</div>

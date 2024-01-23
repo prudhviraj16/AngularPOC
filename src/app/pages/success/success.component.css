@@ -1,0 +1,14 @@
+/* about component css */
+.jumbotron {
+    background-color : #e9ecef;
+    height : 85vh;
+    width: 70%;
+    margin : 0 auto;
+    margin-top: 10px;
+    padding : 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor : pointer
+}
